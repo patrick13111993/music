@@ -28,5 +28,17 @@ class Album
     SqlRunner.run("DELETE FROM albums;")
   end
 
+  def update()
+    SqlRunner.run("UPDATE albums SET (title, genre, artist_id) = ('#{title}', '#{genre}', #{artist_id}) WHERE id = #{id};")
+  end
 
+  def delete()
+    SqlRunner.run("DELETE FROM albums WHERE id = #{id};")
+  end
+
+  def artist()
+    result = SqlRunner.run("SELECT * FROM artists WHERE id = #{artist_id};")
+    artist = Artist.new(result[0])
+    return artist
+  end
 end

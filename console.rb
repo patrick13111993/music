@@ -14,8 +14,13 @@ artist2 = Artist.new({
   'name' => 'Oasis'
   })
 
+artist3 = Artist.new({
+  'name' => 'Ocean Colour Scene'
+  })
+
 artist1.save()
 artist2.save()
+artist3.save()
 
 album1 = Album.new({
   'title' => 'Slippery When Wet',
@@ -41,13 +46,27 @@ album4 = Album.new({
   'artist_id' => artist2.id
   })
 
+album5 = Album.new({
+  'title' => 'B-sides, Seasides and Freerides',
+  'genre' => 'Rock',
+  'artist_id' => artist3.id
+  })
+
 album1.save()
 album2.save()
 album3.save()
 album4.save()
+album5.save()
+album5.delete()
+artist3.delete()
 
 artists = Artist.all()
 albums = Album.all()
+
+binding.pry
+
+album5.delete()
+artist3.delete()
 
 binding.pry
 nil
