@@ -1,6 +1,7 @@
 require('pry-byebug')
 require_relative('models/artists')
 require_relative('models/albums')
+require_relative('models/songs')
 
 Album.delete_all()
 Artist.delete_all()
@@ -52,6 +53,36 @@ album5 = Album.new({
   'artist_id' => artist3.id
   })
 
+song1 = Song.new({
+  'title' => 'Livin On A Prayer',
+  'album_id' => album1.id
+  })
+
+song2 = Song.new({
+  'title' => 'You Give Love A Bad Name',
+  'album_id' => album1.id
+  })
+
+song3 = Song.new({
+  'title' => 'Its My Life',
+  'album_id' => album2.id
+  })
+
+song4 = Song.new({
+  'title' => 'Mrs Jones',
+  'album_id' => album3.id
+  })
+
+song5 = Song.new({
+  'title' => 'Turn Up The Sun',
+  'album_id' => album4.id
+  })
+
+song6 = Song.new({
+  'title' => 'Turn Up The Sun',
+  'album_id' => album5.id
+  })
+
 album1.save()
 album2.save()
 album3.save()
@@ -59,6 +90,13 @@ album4.save()
 album5.save()
 album5.delete()
 artist3.delete()
+
+song1.save()
+song2.save()
+song3.save()
+song4.save()
+song5.save()
+song6.save()
 
 artists = Artist.all()
 albums = Album.all()
