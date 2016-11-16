@@ -8,7 +8,7 @@ name VARCHAR(255) not null
 
 CREATE TABLE albums (
 id SERIAL8 primary key,
-title VARCHAR(255),
-genre VARCHAR(255),
+title VARCHAR(255) not null,
+genre VARCHAR(255) not null,
 artist_id INT8 references artists(id)
 );
